@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205090026",
+    "entityTableName": "director",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

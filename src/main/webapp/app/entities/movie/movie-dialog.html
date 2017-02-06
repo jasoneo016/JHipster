@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMovieLabel" data-translate="jHipsterApp.movie.home.createOrEditLabel">Create or edit a Movie</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.movie.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.movie.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jHipsterApp.movie.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.movie.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jHipsterApp.movie.year" for="field_year">Year</label>
+            <input type="text" class="form-control" name="year" id="field_year"
+                    ng-model="vm.movie.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jHipsterApp.movie.length" for="field_length">Length</label>
+            <input type="text" class="form-control" name="length" id="field_length"
+                    ng-model="vm.movie.length"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jHipsterApp.movie.genre" for="field_genre">Genre</label>
+            <input type="text" class="form-control" name="genre" id="field_genre"
+                    ng-model="vm.movie.genre"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="jHipsterApp.movie.director" for="field_director">Director</label>
+            <select class="form-control" id="field_director" name="director" ng-model="vm.movie.director" ng-options="director as director.id for director in vm.directors | orderBy:'id' track by director.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
